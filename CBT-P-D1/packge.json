@@ -1,0 +1,42 @@
+{
+    "name": "CBT-P-D1",
+    "description": "This is the First Theme",
+    "version": "1.0.0",
+    "engines": {
+        "ghost-api": "v3"
+    },
+    "license": "MIT",
+    "author": {
+        "author": "joy Mojumder",
+        "email": "joymojumder529@gmail.com"
+    },
+    "screenshots": {
+        "desktop": "asset/screenshot-desktop.jpg",
+        "mobile": "asset/screenshot-mobile.jpg"
+    },
+    "config": {
+        "posts_per_page": 3,
+        "image_sizes": {
+            "image_sizes": {
+                "xxs": {
+                    "width": 30
+                },
+                "xs": {
+                    "width": 100
+                },
+                "s": {
+                    "width": 300
+                },
+                "m": {
+                    "width": 600
+                },
+                "l": {
+                    "width": 1000
+                },
+                "xl": {
+                    "width": 2000
+                }
+            }
+        }
+    }
+}

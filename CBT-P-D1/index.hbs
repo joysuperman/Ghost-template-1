@@ -1,0 +1,45 @@
+{{!< default}}
+    <!--navbar end-->
+    <div class="banner" style="background-image: url({{@site.cover_image}}); background-size: cover; width: 100%; background-repeat: no-repeat; height: 89vh;">
+
+    </div>
+
+    <div>
+
+    <!--after slider start-->
+    <section>
+        <div class="container">
+
+            {{!-- Post Show Loop --}}
+                {{#foreach posts}}
+                    
+                    <div class="row card_margin_bottom">
+                        <div class="col-md-6">
+                            {{#if feature_image}}
+                            <div>
+                                <a href="{{url}}"><img src="{{feature_image}}" alt="image" class="home_img_hover_opacity"></a>
+                            </div>
+                            {{/if}}
+                        </div>
+                        <div class="col-md-5">
+                            <div>
+                                <h3><a href="{{url}}" class="home_post_link">{{title}}</a></h3>
+                                <p class="home_post_date">{{#primary_author}}By <a href="{{url}}">{{name}}</a> |{{/primary_author}} {{date format="D MMMM YYYY"}} | {{#if primary_tag}} {{#foreach tags}} <a href="{{url}}">{{name}}</a> , {{/foreach}}|{{/if}}  0 Comment</p>
+                                <p class="home_post_para">{{excerpt words="33"}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="{{url}}">
+                                <div class="home_post_right_arrow_div">
+                                    <p class="home_post_right_arrow_p text-center">></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                {{/foreach}}
+
+                {{pagination}}
+                
+        </div>
+    </section>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="{{@site.lang}}">
+  <head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{meta_title}}</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  >
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Slik Slider -->
+    <link rel="stylesheet" type="text/css" href="{{asset "slick/css/slick.css"}}"/>
+    
+
+    {{ghost_head}}
+  </head>
+
+
+  <body class="{{body_class}}">
+      <!--navbar start-->
+    <div class="nav_section bg-white fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <nav class="navbar navbar-expand navbar-light">
+                        <ul class="navbar-nav">
+                          {{#if @site.navigation}}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{@site.url}}">HOME <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about/">ABOUT</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link disabled" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                CATEGORY
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    {{#get "tags" limit="all"}}
+                                        {{#foreach tags}}
+                                            <a class="dropdown-item" href="{{url}}">{{name}}</a>
+                                        {{/foreach}}
+                                    {{/get}}
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact/">CONTACT</a>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="social_media_section d-none d-lg-block float-right">
+                        <div class="social_icon float-left">
+                            {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" class="fa fa-twitter"></a>{{/if}}
+                            {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" class="fa fa-facebook"></a>{{/if}}
+                        </div>
+                        <div class="search_box float-left">
+                            <div class="input-group ">
+                                <input class="form-control" type="text" placeholder="SEARCH" aria-label="Search">
+                                <div class="input-group-append">
+                                    <a href="#">
+                                        <span class="input-group-text" id="basic-text1"><i class="fa fa-search"
+                                        aria-hidden="true"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="about_page_logo_img">
+        <div class="container text-center">
+            <a href="{{@site.url}}">
+                <img src="{{asset "/images/1.png"}}" alt="logo" class="about_page_img_heading">
+            </a>
+        </div>
+    </section>
+    <!--navbar end-->
+
+    {{!-- MAin Body Content --}}
+    {{{body}}}
+
+    {{!-- Footer --}}
+    {{ghost_foot}}
+    <!--after slider end-->
+    <div class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <h5>Recent Posts</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Live Typography</a>
+                        </li>
+                        <li>
+                            <a href="#">Morning Coffee</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog on Brands Experience</a>
+                        </li>
+                        <li>
+                            <a href="#">Renate Künast besucht <br> Modemesse</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <h5>What We Do</h5>
+                    <p>Your Artwork is important, showcase your imagination with style. Modern, clean & easy to use WordPress themes for creative professionals.</p>
+                </div>
+                <div class="col-md">
+                    <h5>Who We Are</h5>
+                    <p>We are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps.</p>
+                </div>
+                <div class="col-md">
+                    <h5>Creative Blog</h5>
+                    <p>When space is at a premium, such as some types of magazine, newspaper, and yellow pages advertising, white space is limited in order to get as much.</p>
+                </div>
+            </div>
+            <div class="footer">
+                <p>© 2020 All Rights Reserved. Developed by <a href="#">Dessign</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{asset "slick/jquery/slick/slick.js"}}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+        
+    </script>
+
+  </body>
+</html>

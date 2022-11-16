@@ -1,0 +1,41 @@
+{{!< default}}
+
+
+{{#post}}
+    <section>
+        <div class="container contact_left_side_content">
+            <div class="row">
+                <div class="col-md-9">
+                    <h1 class="contact_left_side_title">{{title}}</h1>
+                    <p class="contact_left_side_p">Use Free Plugin “<a href="#" class="contact_left_side_a">Contact Form Clean and Simple</a>”</p>
+                    <p class="contact_left_p1">{{content}}</p>
+
+
+                    <form action="https://formspree.io/f/meqvgqgo" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="contact_left_side_form_label">Name:</label>
+                            <input type="text" class="form-control contact_form_input" id="exampleInputEmail1" name="fullName" aria-describedby="emailHelp" placeholder="Your Name" required>
+                            </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail2" class="contact_left_side_form_label">Email Address:</label>
+                            <input type="email" class="form-control contact_form_input" id="exampleInputEmail2" name="email" aria-describedby="emailHelp" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail3" class="contact_left_side_form_label">Confirm Email Address:</label>
+                            <input type="email" class="form-control contact_form_input" id="exampleInputEmail3" name="confirmEmail" aria-describedby="emailHelp" placeholder="Confirm Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea4" class="contact_left_side_form_label">Message:</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="8" placeholder="Your Message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn contact_send_btn" value="submit">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="col-md-3">
+                    {{> "sidebar"}}
+                </div>
+            </div>
+        </div>
+    </section>
+{{/post}}

@@ -1,0 +1,22 @@
+<nav aria-label="Page navigation example" role="navigation" aria-level="pagination">
+  <ul class="pagination justify-content-start">
+    <li class="page-item">
+      {{#if prev}}
+        <a class="page-link" href="{{page_url prev}}" tabindex="-1">Previous</a>
+      {{/if}}
+    </li>
+
+    {{#foreach pages}}
+      <li class="page-item"><a class="page-link" href="{{page_url}}">{{pages}}</a></li>
+    {{/foreach}}
+
+
+    {{!-- <span class="page-number">Page {{page}} of {{pages}}</span> --}}
+    <li class="page-item">
+      {{#if next}}
+        <a class="page-link" href="{{page_url next}}">Next</a>
+      {{/if}}
+    </li>
+
+  </ul>
+</nav>
